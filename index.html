@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+	<head>
+		<meta charset="UTF8">
+		<title>OOP Javascript</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script type="text/javascript" src="balanceCtrl.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div ng-app>
+		  <h2>Transactions</h2>
+		  <div ng-controller="BalanceCtrl">
+		    <form ng-submit="addItem()">
+		    	<!--  <input type="radio" name="option" ng-model="option" />Withdraw <br />
+		    	<input type="radio" name="option" ng-model="option" checked/>Deposit <br /> -->
+		    	<input type="number" ng-model="transAmount"  size="30" required placeholder="add amount here">
+		    	<input class="btn-primary" type="submit" value="submit">
+		    </form>
+		    <span>You have made: <strong>{{items.length}}</strong> Transactions</span>
+		    <ul class="list-unstyled">
+		      <li ng-repeat="item in items">
+		        <span>{{item.text}}</span>
+		      </li>
+		    </ul>
+		    Balance : {{getBalance()}}
+		  </div>
+		</div>
+	</body>
+</html>
